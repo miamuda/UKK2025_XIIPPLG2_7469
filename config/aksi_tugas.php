@@ -16,11 +16,15 @@ if (isset($_POST['tambah'])) {
     $deadline = date('Y-m-d');
     $userid = $_SESSION['userid'];
 
-    $sql = mysqli_query($koneksi, "INSERT INTO tugas VALUES('','$namatugas','$mapel','$deadline','$userid')");
+    $sql = mysqli_query($koneksi, "INSERT INTO tugas (tugas, user_id) VALUES('mbaranbg')");
+    if ($sql) {
     echo "<script>
     alert ('Data berhasil disimpan');
     location.href='../admin/tugas.php';
     </script>";
+    }else{
+        echo "gak kenek" ;
+    }
 }
 
 if (isset($_POST['edit'])) {

@@ -72,12 +72,11 @@ if ($_SESSION['status'] != 'login') {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
-                            $no = 1;
-                            $userid = $_SESSION['userid'];
-                            $sql = mysqli_query($koneksi, "SELECT * FROM tugas WHERE userid='$userid'");
+                                <?php 
+                            $no = 1;$userid = $_SESSION['userid'];
+                            $sql = mysqli_query($koneksi, "SELECT * FROM tugas");
                             while ($data = mysqli_fetch_array($sql)) {
-                            ?>
+                                ?>
                             <tr>
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $data['namatugas'] ?></td>
@@ -145,12 +144,5 @@ if ($_SESSION['status'] != 'login') {
         </div>
     </div>
 </div>
-
-<footer class="d-flex justify-content-center border-top mt-3 bg-light fixed-bottom">
-    <p>&copy; UKK PPLG 2024 | ratu bulan</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

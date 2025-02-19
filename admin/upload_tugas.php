@@ -51,7 +51,7 @@ if ($_SESSION['status'] != 'login') {
                         <label class="form-label">List Tugas</label>
                         <select class="form-control" name="tugasid">
                             <?php
-                            $sql_tugas = mysqli_query($koneksi, "SELECT * FROM tugas WHERE userid='$userid'");
+                            $sql_tugas = mysqli_query($koneksi, "SELECT * FROM tugas WHERE user_id='$user_id'");
                             while($data_tugas = mysqli_fetch_array($sql_tugas)){ ?>
                             <option value="<?php echo $data_tugas['tugasid'] ?>"><?php echo
                              $data_tugas['namatugas'] ?></option>
@@ -80,13 +80,13 @@ if ($_SESSION['status'] != 'login') {
                             </tr>
                         </thead>
                         <tbody>
-    <?php 
+    <!-- <?php 
     $no = 1;
     $userid = $_SESSION['userid']; 
     $sql = mysqli_query($koneksi, "SELECT * FROM tugas WHERE userid='$userid'");
     if (mysqli_num_rows($sql) > 0) {
         while ($data = mysqli_fetch_array($sql)) {
-    ?>
+    ?> -->
     <tr>
         <td><?php echo $no++; ?></td>
         <td><img src="../asset/img/<?php echo $data['lokasifile']; ?>" width="100"></td>
